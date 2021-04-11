@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="FixToolsModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="FixToolsEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="ESTADO" EntityType="FixToolsModel.ESTADO" />
+    <EntitySet Name="USER" EntityType="FixToolsModel.USER" />
+    <AssociationSet Name="FK_USER_ESTADO" Association="FixToolsModel.FK_USER_ESTADO">
+      <End Role="ESTADO" EntitySet="ESTADO" />
+      <End Role="USER" EntitySet="USER" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="ESTADO">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="DE_DESCRIP_ESTADO" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="USER" Relationship="FixToolsModel.FK_USER_ESTADO" FromRole="ESTADO" ToRole="USER" />
+  </EntityType>
+  <EntityType Name="USER">
+    <Key>
+      <PropertyRef Name="NU_AUTO_NUM" />
+    </Key>
+    <Property Name="NU_AUTO_NUM" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TX_EMAIL" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="PW_PASSWORD" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CD_ID_STATE" Type="Int32" />
+    <NavigationProperty Name="ESTADO" Relationship="FixToolsModel.FK_USER_ESTADO" FromRole="USER" ToRole="ESTADO" />
+  </EntityType>
+  <Association Name="FK_USER_ESTADO">
+    <End Type="FixToolsModel.ESTADO" Role="ESTADO" Multiplicity="0..1" />
+    <End Type="FixToolsModel.USER" Role="USER" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ESTADO">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="USER">
+        <PropertyRef Name="CD_ID_STATE" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

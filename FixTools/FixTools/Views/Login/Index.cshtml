@@ -1,13 +1,13 @@
 ﻿
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title =" FixTools ";
     Layout = "~/Views/Shared/_LayoutLogin.cshtml";
 }
 
 
-<div class="row">
+@*<div class="row">
     <form id="formLogin">
-        @*<div class="col-lg-6 col-lg-offset-1">*@
+       
             <div class="form-group">
                 <label>Usuario</label>
                 <input type="email" name="user" />
@@ -19,7 +19,36 @@
                 <div class="form-group">
                     <input type="submit" class="btn btn-success" value="Entrar" />
                 </div>
-        @*</div>*@
+        
+    </form>
+</div>*@
+
+<div class="text-center" style="        margin-top: 138px;
+        margin-bottom: 154px;
+       background-image: url('../../Images/carpintero-14.gif');
+">
+    <form id="formLogin">
+        <div class="sys-logo">
+            <img class="" src="~/Images/fixTools.png" alt="FixTools" title="FixTools">
+        </div>
+        <h2>Iniciar Sesión</h2>
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="form-group text-center">
+            <div class="form-group">
+                <label>Usuario</label>
+                <input type="email" name="user" />
+            </div>
+
+            <div class="form-group">
+                <label>Contraseña</label>
+                <input type="password" name="pass" />
+            </div>
+        </div>
+
+
+        <div class="text-center">
+            <input type="submit" class="btn btn-success" value="Entrar" />
+        </div>
     </form>
 </div>
 

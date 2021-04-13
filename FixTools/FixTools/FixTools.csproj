@@ -172,6 +172,8 @@
       <SubType>Designer</SubType>
     </Content>
     <Content Include="Images\16_gestor.svg" />
+    <Content Include="Images\carpintero-14.gif" />
+    <Content Include="Images\fixTools.png" />
     <Content Include="Images\menu\13_modulori.svg" />
     <Content Include="Images\menu\15_indicadoreshims.svg" />
     <Content Include="Images\menu\16_gestor.svg" />

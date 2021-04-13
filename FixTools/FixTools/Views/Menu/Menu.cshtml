@@ -1,0 +1,90 @@
+﻿
+@{
+    ViewBag.Title = "Mr Fix";
+}
+
+
+
+<header id="formLogin" class="clearfix section">
+    <div class="col-md-12">
+        <div class="row">
+            <div class="col-md-6 form-group">
+                <p class="text-left alpha">
+                    <a href="~/">
+                        <img src="~/iconos/045-building.svg" width="15%" style="margin: 0 auto;" title="Administracion">
+                    </a>
+                </p>
+            </div>
+            <div class="col-md-6 form-group">
+                <p class="text-left alpha">
+                    <a href="~/">
+                        <img src="~/iconos/001-laborers-1.svg" width="15%" style="margin: 0 auto;" title="Consultor">
+                    </a>
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-12">
+        <div class="row">
+            <div class="col-md-6 form-group">
+                <p class="text-left alpha">
+                    <a href="~/">
+                        <img src="~/iconos/002-laborers.svg" width="15%" style="margin: 0 auto;" title="Mis Proveedores">
+                    </a>
+                </p>
+            </div>
+            <div class="col-md-6 form-group">
+                <p class="text-left alpha">
+                    <a href="~/">
+                        <img src="~/iconos/047-house-sketch.svg" width="15%" style="margin: 0 auto;" title="Seguimiento">
+                    </a>
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-12">
+        <div class="row">
+            <div class="col-md-6 form-group">
+                <p class="text-left alpha">
+                    <a href="~/">
+                        <img src="~/iconos/006-tool-box.svg" width="15%" style="margin: 0 auto;" title="Renovar Plan">
+                    </a>
+                </p>
+            </div>
+            <div class="col-md-6 form-group">
+                <p class="text-left alpha">
+                    <a href="~/">
+                        <img src="~/iconos/037-construction-1.svg" width="15%" style="margin: 0 auto;" title="Soporte">
+                    </a>
+                </p>
+            </div>
+        </div>
+    </div>
+</header>
+
+
+
+
+    @section scripts
+{
+        <script>
+    $(document).ready(function () {
+
+        $("#formLogin").submit(function (e) {
+            e.preventDefault();
+
+            url = "@Url.Content("~/Menu")"
+            parametros = $(this).serialize();
+
+            $.post(url, parametros, function (data) {
+
+
+                    document.location.href = "@Url.Content("~/")";
+
+
+            })
+        })
+    });
+        </script>
+    }
+

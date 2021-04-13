@@ -1,4 +1,99 @@
 ﻿@{
-    ViewBag.Title = "Home Page";
+    ViewBag.Title = "Inicio";
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
+@using (Html.BeginForm())
+{
+    <header id="header" class="clearfix section">
 
+
+
+
+
+        <section class="section slim interactive" data-interactive="">
+
+            <div class="list-hex-grid large clearfix">
+
+                <div class="hex grid-4 invert icono14" style="display:none;">
+                    <a href="#" data-modal-link="" data-m-group="players" data-modal="/modal/maila" style="display:none;">
+                        <div class="inner">
+                            <p>Menu invisible, para evitar error de NULL si no hay permisos de ninguna opción</p>
+                            <hr class="grid-1 center">
+                            <p></p>
+                        </div>
+
+                        <div class="hex-1"><span class="after"></span></div>
+                        <div class="hex-2"><span class="after"></span></div>
+                        <span class="after"></span>
+                    </a>
+                </div>
+                <br />
+                <br />
+                <br />
+                <br />
+                
+                    @*<li>@Html.ActionLink("Usuarios", "Usuarios", "Home")</li>*@
+                    <div class="hex grid-4 invert icono16">
+                        <a href="~/Home/Usuarios" data-modal-link="" data-m-group="players" data-modal="/modal/maila">
+                            <div class="inner">
+                                <p>Soy admin</p>
+                                <hr class="grid-1 center">
+                                <p></p>
+                            </div>
+
+                            <div class="hex-1"><span class="after"></span></div>
+                            <div class="hex-2"><span class="after"></span></div>
+                            <span class="after"></span>
+                        </a>
+                    </div>
+
+
+                
+                
+                    @*<li>@Html.ActionLink("Vuelos", "Vuelos", "Home")</li>*@
+                    <div class="hex grid-4 invert icono13">
+                        <a href="~/Home/Vuelos" data-modal-link="" data-m-group="players" data-modal="/modal/maila">
+                            <div class="inner">
+                                <p>Programa de mantenimiento</p>
+                                <hr class="grid-1 center">
+                                <p></p>
+                            </div>
+
+                            <div class="hex-1"><span class="after"></span></div>
+                            <div class="hex-2"><span class="after"></span></div>
+                            <span class="after"></span>
+                        </a>
+                    </div>
+
+                
+               
+                    @*<li>@Html.ActionLink("Pistas", "Pistas", "Home")</li>*@
+                    <div class="hex grid-4 invert icono15">
+                        <a href="~/Home/Pistas" data-modal-link="" data-m-group="players" data-modal="/modal/maila">
+                            <div class="inner">
+                                <p>Usuarios</p>
+                                <hr class="grid-1 center">
+                                <p></p>
+                            </div>
+
+                            <div class="hex-1"><span class="after"></span></div>
+                            <div class="hex-2"><span class="after"></span></div>
+                            <span class="after"></span>
+                        </a>
+                    </div>
+            </div>
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+
+        </section>
+
+
+    </header>
+    <body>
+        <footer> Iconos diseñados por <a href="https://www.flaticon.es/autores/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.es/" title="Flaticon"> www.flaticon.es</a></footer>
+    </body>
+
+}

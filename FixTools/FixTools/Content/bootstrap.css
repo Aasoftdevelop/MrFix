@@ -251,10 +251,10 @@ th {
   .table {
     border-collapse: collapse !important;
   }
-  .table td,
-  .table th {
-    background-color: #fff !important;
-  }
+    .table td,
+    .table th {
+        background-color: #716f6f !important;
+    }
   .table-bordered th,
   .table-bordered td {
     border: 1px solid #ddd !important;
@@ -1287,7 +1287,7 @@ h6,
   font-size: 12px;
 }
 p {
-  margin: 0 0 10px;
+    margin: 22px 0 14px;
 }
 .lead {
   margin-bottom: 20px;
@@ -4595,11 +4595,11 @@ fieldset[disabled] .navbar-default .btn-link:focus {
 .navbar-inverse .navbar-brand {
   color: #9d9d9d;
 }
-.navbar-inverse .navbar-brand:hover,
-.navbar-inverse .navbar-brand:focus {
-  color: #fff;
-  background-color: transparent;
-}
+    .navbar-inverse .navbar-brand:hover,
+    .navbar-inverse .navbar-brand:focus {
+        color: #02000;
+        background-color: dimgrey;
+    }
 .navbar-inverse .navbar-text {
   color: #9d9d9d;
 }

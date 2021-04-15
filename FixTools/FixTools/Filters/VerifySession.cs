@@ -26,7 +26,7 @@ namespace FixTools.Filters
             {
                 if (filterContext.Controller is LoginController == true)
                 {
-                    filterContext.HttpContext.Response.Redirect("~/Home/Index");
+                    filterContext.HttpContext.Response.Redirect("~/Menu/Menu");
                 }
 
             }

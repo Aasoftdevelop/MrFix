@@ -1,0 +1,113 @@
+﻿@model FixTools.Models.ProgramaMantenimientodModel
+@{
+    ViewBag.Title = "Programa Mantenimiento";
+}
+
+<div>
+    <div class="row">
+        <div class="col-md-8">
+            <div class="tab-title">
+                <h3 class="title">Programa Mantenimiento</h3>
+                <div class="line"></div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="box-main full-height">
+    <div class="box-form full-height" >
+        <div class="row">
+            <div class="row">
+                <div class="col-md-3">
+                    <div class="form-group label-floating">
+                        @Html.LabelFor(model => model.Zona, htmlAttributes: new { @class = "control-label" })
+                        @Html.DropDownListFor(model => model.Zona, Model.ListZonas, "Seleccione", new { @class = "selectpicker" })
+                        @Html.ValidationMessageFor(model => model.Zona, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <div class="checkbox">
+                    <label id="lb_Pintura" style="display:none;">
+                        <input id="chk_Pintura" name="" type="checkbox" value="1"> Pintura
+                    </label>
+                    <label id="lb_RedesH" style="display:none;">
+                        <input id="chk_RedesH" name="" type="checkbox" value="2"> Redes Hidraúlicas
+                    </label>
+                    <label id="lb_RedesE" style="display:none;">
+                        <input id="chk_RedesE" name="" type="checkbox" value="3"> Redes Eléctricas
+                    </label>
+                    <label id="lb_Obras" style="display:none;">
+                        <input id="chk_Obras" name="" type="checkbox" value="4">  Obras Mayores
+                    </label>
+                    <label id="lb_Equipos" style="display:none;">
+                        <input id="chk_Equipos" name="" type="checkbox" value="5"> Equipos Especiales
+                    </label>
+
+
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-3">
+                    <div class="form-group label-floating" style="display:none;" id="divListEquipo">
+                        @Html.LabelFor(model => model.EquipoEspecial, htmlAttributes: new { @class = "control-label"})
+                        @Html.DropDownListFor(model => model.EquipoEspecial, Model.ListEquiposEspeciales, "Seleccione", new { @class = "selectpicker" })
+                        @Html.ValidationMessageFor(model => model.EquipoEspecial, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section scripts{
+<script type="text/javascript">
+    $(document).ready(function () {
+
+        $('#Zona').change(function () {
+            if ($('#Zona').val() == 1) {
+                $('#lb_Pintura').css("display", "block");
+                $('#lb_RedesH').css("display", "block");
+                $('#lb_RedesE').css("display", "block");
+                $('#lb_Obras').css("display", "none");
+                $('#lb_Equipos').css("display", "none");
+                $('#chk_Obras').prop('checked', false);
+                $('#chk_Obras').change();
+                $('#chk_Equipos').prop('checked', false);
+                $('#chk_Equipos').change();
+            }
+            if ($('#Zona').val() == 2) {
+
+                $('#lb_Pintura').css("display", "block");
+                $('#lb_RedesH').css("display", "block");
+                $('#lb_RedesE').css("display", "block");
+                $('#lb_Obras').css("display", "block");
+                $('#lb_Equipos').css("display", "none");
+                $('#chk_Equipos').prop('checked', false);
+                $('#chk_Equipos').change();
+            }
+
+            if ($('#Zona').val() == 3) {
+
+                $('#lb_Pintura').css("display", "block");
+                $('#lb_RedesH').css("display", "block");
+                $('#lb_RedesE').css("display", "block");
+                $('#lb_Obras').css("display", "block");
+                $('#lb_Equipos').css("display", "block");
+            }
+        });
+
+        $("#chk_Equipos").change(function () {
+
+            if ($("#chk_Equipos").prop('checked')) {
+
+                $('#divListEquipo').css("display", "block");
+
+            } else {
+
+                $('#divListEquipo').css("display", "none");
+            }
+        });
+    });
+    </script>
+        }

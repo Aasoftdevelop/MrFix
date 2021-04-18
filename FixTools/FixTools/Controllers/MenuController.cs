@@ -19,7 +19,6 @@ namespace FixTools.Controllers
             return View();
         }
 
-
         // POST: Menu/Create
         [HttpPost]
         public ActionResult Create(FormCollection collection)

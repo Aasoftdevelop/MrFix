@@ -14,8 +14,11 @@ namespace FixTools.Controllers
         {
             return View();
         }
+        public ActionResult MenuAdministrador()
+        {
+            return View();
+        }
 
-       
 
         // POST: Menu/Create
         [HttpPost]
